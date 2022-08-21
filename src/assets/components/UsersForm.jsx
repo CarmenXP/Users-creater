@@ -11,7 +11,7 @@ const defaultValue={
 
 }
 
-const UsersForm = ({getAllUsers, updateUser, setUpdateUser}) => {
+const UsersForm = ({getAllUsers, updateUser, setUpdateUser, handleCloseModal}) => {
 
     useEffect(() => {
         if(updateUser){
@@ -51,11 +51,13 @@ const UsersForm = ({getAllUsers, updateUser, setUpdateUser}) => {
             createUser(data)
         }
         reset(defaultValue)
+        handleCloseModal()
     }
     
 
   return (
     <form className='form' onSubmit={handleSubmit(submit)} >
+        
         <h1>{updateUser? 'Actualizar usuario' : 'Nuevo usuario'}</h1>
         <ul className='form_list'>
             <li className='form_item'>

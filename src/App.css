@@ -88,6 +88,32 @@
 .form_btn:hover{
   background-color: rgb(67, 207, 207);
 }
+/*Modal*/
+.modal_none{
+  display: none;
+}
+.modal_container{
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+
+}
+.close{
+  position: absolute;
+  padding: 8px 10px;
+  background-color: rgb(227, 229, 231);
+  border-radius: 25px;
+  top: 50px;
+  right: 90px;
+
+}
 
 /*cards*/
 .cards{

@@ -9,6 +9,7 @@ function App() {
   //states
   const [allUsers, setAllUsers] = useState()
   const [updateUser, setUpdateUser] = useState()
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   //functions
   const getAllUsers = () =>{
@@ -17,6 +18,12 @@ function App() {
       .then(res => setAllUsers(res.data))
       .catch(err=> console.log(err))
 
+  }
+  const handleOpenModal = () =>{
+    setIsOpenModal(true)
+  }
+  const handleCloseModal = () =>{
+    setIsOpenModal(false)
   }
 
   //life cicles
@@ -33,17 +40,19 @@ function App() {
     <div className="App">
       <header className='header'>
         <h1> <i className='bx bx-user-circle'></i> Usuarios</h1>
-        <button className='header__btn'>
+        <button className='header__btn' onClick={handleOpenModal}>
           <i className='bx bx-plus'></i> 
           Crear usuario 
         </button>
       </header>
  
-      <div className="modal__container">
+      <div className={ isOpenModal?"modal_container": "modal_none"}>
+        <div className="close" onClick={handleCloseModal}>X</div>
         <UsersForm
           getAllUsers={getAllUsers}
           updateUser={updateUser}
           setUpdateUser={setUpdateUser}
+          handleCloseModal = {handleCloseModal}
         />
       </div >
       <div className="cards">
@@ -54,6 +63,8 @@ function App() {
               user={user}
               getAllUsers={getAllUsers}
               setUpdateUser={setUpdateUser}
+              handleOpenModal={handleOpenModal}
+
             />
           
           ))

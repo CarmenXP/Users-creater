@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const UsersCards = ({user, getAllUsers, setUpdateUser}) => {
+const UsersCards = ({user, getAllUsers, setUpdateUser, handleOpenModal}) => {
 
   const deleteUser =() =>{
     const URL = `https://users-crud1.herokuapp.com/users/${user.id}/`
@@ -14,6 +14,7 @@ const UsersCards = ({user, getAllUsers, setUpdateUser}) => {
   }
 
   const update = ()=>{
+    handleOpenModal()
     setUpdateUser(user)
   }
 
