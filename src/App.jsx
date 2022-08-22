@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import UsersForm from './assets/components/UsersForm'
 import UsersCards from './assets/components/UsersCards'
