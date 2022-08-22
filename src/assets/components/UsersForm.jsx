@@ -53,10 +53,10 @@ const UsersForm = ({getAllUsers, updateUser, setUpdateUser, handleCloseModal}) =
         reset(defaultValue)
         handleCloseModal()
     }
-    
+    const handleModalContainerClick = (e) => e.stopPropagation();
 
   return (
-    <form className='form' onSubmit={handleSubmit(submit)} >
+    <form className='form' onSubmit={handleSubmit(submit)} onClick={handleModalContainerClick} >
         
         <h1>{updateUser? 'Actualizar usuario' : 'Nuevo usuario'}</h1>
         <ul className='form_list'>

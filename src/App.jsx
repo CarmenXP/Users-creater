@@ -46,8 +46,8 @@ function App() {
         </button>
       </header>
  
-      <div className={ isOpenModal?"modal_container": "modal_none"}>
-        <div className="close" onClick={handleCloseModal}>X</div>
+      <div className={ isOpenModal?"modal_container": "modal_none"} onClick={handleCloseModal}>
+        <div className="close" onClick={handleCloseModal}><i className='bx bx-x'></i></div>
         <UsersForm
           getAllUsers={getAllUsers}
           updateUser={updateUser}
